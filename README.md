@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YUKTI – Smart Waste Pickup
+
+**Yukti** is a next-generation waste management platform for Guwahati, designed to streamline civic services through technology. It enables citizens to schedule segregated waste pickups, report bin overflows, and earn "Green Points" for responsible waste disposal.
+
+## Features
+
+- **Smart Scheduling**: Schedule wet, dry, and e-waste pickups in 30 seconds.
+- **Source Segregation**: Mandatory waste categorization to promote recycling.
+- **Overflow Reporting**: Rapid response system for reporting overflowing community bins.
+- **Green Points**: Earn rewards for every verified verified pickup, redeemable for civic benefits.
+- **Interactive Dashboard**: Track pickup status and environmental impact in real-time.
+
+## Technology Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Visual Effects**: Framer Motion, Three.js (@react-three/fiber)
+- **Database**: Drizzle ORM with LibSQL (Turso)
+- **Authentication**: Better-Auth
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18+
+- npm
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/sr-857/yukti.git
+    cd yukti
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Install dependencies**
+    > **Note**: This project requires `legacy-peer-deps` due to dependency constraints.
+    ```bash
+    npm install --legacy-peer-deps
+    ```
 
-## Learn More
+3.  **Configure Environment Variables**
+    Copy the example environment file and fill in your values.
+    ```bash
+    cp .env.example .env.local
+    ```
+    Required variables:
+    - `TURSO_DATABASE_URL` & `TURSO_AUTH_TOKEN` (Database)
+    - `BETTER_AUTH_SECRET` & `BETTER_AUTH_URL` (Authentication)
+    - `STRIPE_API_KEY` (Optional - for payments)
 
-To learn more about Next.js, take a look at the following resources:
+4.  **Run the Development Server**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment on Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is configured for deployment on [Vercel](https://vercel.com).
 
-## Deploy on Vercel
+1.  **Push to GitHub**: Ensure your code is pushed to a repository.
+2.  **Import Project**: Import the repository in Vercel.
+3.  **Environment Variables**: Add the required environment variables in the Vercel dashboard (Project Settings > Environment Variables).
+4.  **Deploy**: Vercel will detect the Next.js project and deploy it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> **Important**: An `.npmrc` file is included in the repository to automatically enforce `legacy-peer-deps=true` during the Vercel build process. You do not need to configure this manually.
