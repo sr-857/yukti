@@ -1,67 +1,84 @@
-# YUKTI – Smart Waste Pickup
+# 🌿 YUKTI – Smart Waste Pickup for Guwahati
 
-**Yukti** is a next-generation waste management platform for Guwahati, designed to streamline civic services through technology. It enables citizens to schedule segregated waste pickups, report bin overflows, and earn "Green Points" for responsible waste disposal.
+**Yukti** is a next-generation civic platform built in collaboration with **Guwahati Municipal Corporation (GMC)**. It leverages technology to optimize ward-level waste collection through smart source segregation and citizen-centric rewards.
 
-## Features
+---
 
-- **Smart Scheduling**: Schedule wet, dry, and e-waste pickups in 30 seconds.
-- **Source Segregation**: Mandatory waste categorization to promote recycling.
-- **Overflow Reporting**: Rapid response system for reporting overflowing community bins.
-- **Green Points**: Earn rewards for every verified verified pickup, redeemable for civic benefits.
-- **Interactive Dashboard**: Track pickup status and environmental impact in real-time.
+## 🚀 Key Features
 
-## Technology Stack
+- **📱 30-Second Scheduling**: Effortlessly schedule pickups for **Wet**, **Dry**, and **E-Waste**.
+- **♻️ Source Segregation**: Mandatory categorization at the source to ensure maximum recycling efficiency.
+- **🚨 Overflow Reporting**: A rapid-response system for citizens to report overflowing community bins with visual evidence.
+- **🌱 Green Points**: A gamified reward system where citizens earn points for every responsible waste disposal action.
+- **📊 Interactive Analytics**: Real-time tracking of collection efficiency, ward-wise participation, and environmental impact.
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Visual Effects**: Framer Motion, Three.js (@react-three/fiber)
-- **Database**: Drizzle ORM with LibSQL (Turso)
-- **Authentication**: Better-Auth
+---
 
-## Getting Started
+## 🛠️ Technology Stack
 
-### Prerequisites
+- **Core**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **UI/UX**: [Tailwind CSS](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/), [Lucide Icons](https://lucide.dev/)
+- **Graphics**: [Three.js](https://threejs.org/) & [@react-three/fiber](https://github.com/pmndrs/react-three-fiber)
+- **Data Layer**: [Drizzle ORM](https://orm.drizzle.team/) with [Turso (LibSQL)](https://turso.tech/)
+- **Auth**: [Better-Auth](https://www.better-auth.com/)
+- **State**: Custom React Context Store with LocalStorage persistence
 
-- Node.js 18+
-- npm
+---
 
-### Installation
+## 📦 Project Structure
 
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/sr-857/yukti.git
-    cd yukti
-    ```
+```text
+src/
+├── app/            # Next.js App Router (Dashboard, Rewards, API)
+├── components/     # Reusable UI components (Navbar, Footer, Shadcn UI)
+├── lib/            # Shared logic, store, and constants
+├── visual-edits/   # Custom loader for visual telemetry
+└── ...
+```
 
-2.  **Install dependencies**
-    > **Note**: This project requires `legacy-peer-deps` due to dependency constraints.
-    ```bash
-    npm install --legacy-peer-deps
-    ```
+---
 
-3.  **Configure Environment Variables**
-    Copy the example environment file and fill in your values.
-    ```bash
-    cp .env.example .env.local
-    ```
-    Required variables:
-    - `TURSO_DATABASE_URL` & `TURSO_AUTH_TOKEN` (Database)
-    - `BETTER_AUTH_SECRET` & `BETTER_AUTH_URL` (Authentication)
-    - `STRIPE_API_KEY` (Optional - for payments)
+## 🛠️ Getting Started
 
-4.  **Run the Development Server**
-    ```bash
-    npm run dev
-    ```
-    Open [http://localhost:3000](http://localhost:3000) to view the app.
+### 1. Clone & Install
+```bash
+git clone https://github.com/sr-857/yukti.git
+cd yukti
+npm install --legacy-peer-deps
+```
 
-## Deployment on Vercel
+### 2. Environment Setup
+Create a `.env.local` file based on `.env.example`:
+```bash
+# Database
+TURSO_DATABASE_URL=your_turso_url
+TURSO_AUTH_TOKEN=your_auth_token
 
-This project is configured for deployment on [Vercel](https://vercel.com).
+# Authentication
+BETTER_AUTH_SECRET=your_secret
+BETTER_AUTH_URL=http://localhost:3000
+```
 
-1.  **Push to GitHub**: Ensure your code is pushed to a repository.
-2.  **Import Project**: Import the repository in Vercel.
-3.  **Environment Variables**: Add the required environment variables in the Vercel dashboard (Project Settings > Environment Variables).
-4.  **Deploy**: Vercel will detect the Next.js project and deploy it.
+### 3. Development
+```bash
+npm run dev
+```
 
-> **Important**: An `.npmrc` file is included in the repository to automatically enforce `legacy-peer-deps=true` during the Vercel build process. You do not need to configure this manually.
+---
+
+## 🌐 Deployment
+
+This project is optimized for deployment on the **Vercel Platform**.
+
+- **Automatic Build Path**: The project includes an `.npmrc` to handle strict peer dependency requirements automatically.
+- **Next.js Update**: Version pinned to a patched release to ensure security (CVE-2025-66478 resolved).
+
+---
+
+## 🤝 Contribution
+
+We welcome contributions to make Guwahati cleaner and smarter! Please open an issue or submit a pull request.
+
+---
+
+*Developed for GMC Ward Optimization.*
