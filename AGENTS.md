@@ -1,5 +1,5 @@
 ## Project Summary
-YUKTI (formerly CleanWard) is a production-grade civic-tech SaaS platform built for the Guwahati Municipal Corporation. It features a dual-actor ecosystem: a high-fidelity Citizen Interface for scheduling segregated waste pickups and earning "Green Points," and a sophisticated Collector Dashboard with real-time routing logic and geospatial visualization.
+YUKTI is a production-grade civic-tech SaaS platform built for the Guwahati Municipal Corporation. It features a dual-actor ecosystem: a high-fidelity Citizen Interface for scheduling segregated waste pickups and earning "Green Points," and a sophisticated Collector Dashboard with real-time routing logic and geospatial visualization.
 
 ## Tech Stack
 - **Framework:** Next.js 15 (App Router)
